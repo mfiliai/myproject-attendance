@@ -39,5 +39,4 @@ And then run the backend server with:
 $ python manage.py runserver
 ```
 
-You can run server by using the
 [python-venv]: http://pacific-coding.commoncode.io/python-intro/create-a-venv/

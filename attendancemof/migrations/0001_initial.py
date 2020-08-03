@@ -8,30 +8,123 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Stafflist',
+            name="Stafflist",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('Name', models.CharField(max_length=200, null=True)),
-                ('Division', models.CharField(choices=[('Corporate Services Division', 'Corporate Services Division'), ('Office of the CEO', 'Office of the CEO'), ('Office of the Minister', 'Office of the Minister'), ('Information Technology and Communication Division', 'Information Technology and Communication Division'), ('Finacial Framework Division', 'Finacial Framework Division'), ('Procurement Division', 'Procurement Division'), ('Treasury Division', 'Treasury Division'), ('Budget Division', 'Budget Division'), ('Aid and Projects Division', 'Aid and Projects Division'), ('Economic and Fiscal Policy Division', 'Economic and Fiscal Policy Division'), ('Resilience Division', 'Resilience Division'), ('SUB EUA', 'SUB EUA'), ('SUB VAVAU', 'SUB VAVAU'), ('SUB HAAPAI', 'SUB HAAPAI')], max_length=200, null=True)),
-                ('Position', models.CharField(max_length=200, null=True)),
-                ('Band', models.CharField(choices=[('B', 'B'), ('C', 'C'), ('D', 'D'), ('E', 'E'), ('F', 'F'), ('G', 'G'), ('H', 'H'), ('I', 'I'), ('J', 'J'), ('K', 'K'), ('L', 'L'), ('M', 'M'), ('N', 'N'), ('O', 'O'), ('P', 'P'), ('Q', 'Q'), ('R', 'R'), ('S', 'S')], max_length=20, null=True)),
-                ('Date_Created', models.DateTimeField(auto_now_add=True, null=True)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("Name", models.CharField(max_length=200, null=True)),
+                (
+                    "Division",
+                    models.CharField(
+                        choices=[
+                            (
+                                "Corporate Services Division",
+                                "Corporate Services Division",
+                            ),
+                            ("Office of the CEO", "Office of the CEO"),
+                            ("Office of the Minister", "Office of the Minister"),
+                            (
+                                "Information Technology and Communication Division",
+                                "Information Technology and Communication Division",
+                            ),
+                            (
+                                "Finacial Framework Division",
+                                "Finacial Framework Division",
+                            ),
+                            ("Procurement Division", "Procurement Division"),
+                            ("Treasury Division", "Treasury Division"),
+                            ("Budget Division", "Budget Division"),
+                            ("Aid and Projects Division", "Aid and Projects Division"),
+                            (
+                                "Economic and Fiscal Policy Division",
+                                "Economic and Fiscal Policy Division",
+                            ),
+                            ("Resilience Division", "Resilience Division"),
+                            ("SUB EUA", "SUB EUA"),
+                            ("SUB VAVAU", "SUB VAVAU"),
+                            ("SUB HAAPAI", "SUB HAAPAI"),
+                        ],
+                        max_length=200,
+                        null=True,
+                    ),
+                ),
+                ("Position", models.CharField(max_length=200, null=True)),
+                (
+                    "Band",
+                    models.CharField(
+                        choices=[
+                            ("B", "B"),
+                            ("C", "C"),
+                            ("D", "D"),
+                            ("E", "E"),
+                            ("F", "F"),
+                            ("G", "G"),
+                            ("H", "H"),
+                            ("I", "I"),
+                            ("J", "J"),
+                            ("K", "K"),
+                            ("L", "L"),
+                            ("M", "M"),
+                            ("N", "N"),
+                            ("O", "O"),
+                            ("P", "P"),
+                            ("Q", "Q"),
+                            ("R", "R"),
+                            ("S", "S"),
+                        ],
+                        max_length=20,
+                        null=True,
+                    ),
+                ),
+                ("Date_Created", models.DateTimeField(auto_now_add=True, null=True)),
             ],
         ),
         migrations.CreateModel(
-            name='AttendanceT20',
+            name="AttendanceT20",
             fields=[
-                ('stafflist_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='attendancemof.Stafflist')),
-                ('AttendanceDate', models.DateTimeField(null=True)),
-                ('Attendance', models.CharField(choices=[('On Duty', 'On Duty'), ('Late', 'Late'), ('Casual Leave', 'Casual Leave'), ('Annual Leave', 'Annual Leave'), ('Sick Leave', 'Sick Leave'), ('In Lieu', 'In Lieu'), ('NOP', 'NOP'), ('WOP', 'WOP')], max_length=200, null=True)),
-                ('Time_In', models.DateTimeField(null=True)),
-                ('Remarks', models.CharField(max_length=500, null=True)),
+                (
+                    "stafflist_ptr",
+                    models.OneToOneField(
+                        auto_created=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        parent_link=True,
+                        primary_key=True,
+                        serialize=False,
+                        to="attendancemof.Stafflist",
+                    ),
+                ),
+                ("AttendanceDate", models.DateTimeField(null=True)),
+                (
+                    "Attendance",
+                    models.CharField(
+                        choices=[
+                            ("On Duty", "On Duty"),
+                            ("Late", "Late"),
+                            ("Casual Leave", "Casual Leave"),
+                            ("Annual Leave", "Annual Leave"),
+                            ("Sick Leave", "Sick Leave"),
+                            ("In Lieu", "In Lieu"),
+                            ("NOP", "NOP"),
+                            ("WOP", "WOP"),
+                        ],
+                        max_length=200,
+                        null=True,
+                    ),
+                ),
+                ("Time_In", models.DateTimeField(null=True)),
+                ("Remarks", models.CharField(max_length=500, null=True)),
             ],
-            bases=('attendancemof.stafflist',),
+            bases=("attendancemof.stafflist",),
         ),
     ]

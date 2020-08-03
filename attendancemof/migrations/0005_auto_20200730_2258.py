@@ -7,28 +7,38 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('attendancemof', '0004_auto_20200730_2027'),
+        ("attendancemof", "0004_auto_20200730_2027"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='attendancet20',
-            name='a_id',
-            field=models.AutoField(default='2', primary_key=True, serialize=False),
+            model_name="attendancet20",
+            name="a_id",
+            field=models.AutoField(default="2", primary_key=True, serialize=False),
         ),
         migrations.AddField(
-            model_name='treasury_purposes',
-            name='t_id',
-            field=models.AutoField(default='1', primary_key=True, serialize=False),
+            model_name="treasury_purposes",
+            name="t_id",
+            field=models.AutoField(default="1", primary_key=True, serialize=False),
         ),
         migrations.AlterField(
-            model_name='attendancet20',
-            name='stafflist_ptr',
-            field=models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, to='attendancemof.Stafflist'),
+            model_name="attendancet20",
+            name="stafflist_ptr",
+            field=models.OneToOneField(
+                auto_created=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                parent_link=True,
+                to="attendancemof.Stafflist",
+            ),
         ),
         migrations.AlterField(
-            model_name='treasury_purposes',
-            name='attendancet20_ptr',
-            field=models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, to='attendancemof.AttendanceT20'),
+            model_name="treasury_purposes",
+            name="attendancet20_ptr",
+            field=models.OneToOneField(
+                auto_created=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                parent_link=True,
+                to="attendancemof.AttendanceT20",
+            ),
         ),
     ]
