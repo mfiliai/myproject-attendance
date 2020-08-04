@@ -8,10 +8,15 @@
 1. Activate the virtual environment. For example, if your virtual environment is named `.venv`, type :
 
 ```bash
-$ source .venv/bin/activate  // on MacOs and Linux
-$ .ven\Scripts\activate  // on Widows
-```
 
+install virtual environment
+python -m venv .venv  
+
+$ source .venv/bin/activate  // on MacOs and Linux
+activate virtual
+$ .venv\Scripts\activate.bat  // on Widows
+```
+deactivate - deactivate
 1. Install dependencies with `pip`. But first, let's make sure we have the latest version of `pip` :
 
 ```bash
