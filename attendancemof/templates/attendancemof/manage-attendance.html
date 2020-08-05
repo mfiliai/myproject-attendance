@@ -1,0 +1,28 @@
+{% extends 'attendancemof/base_template.html' %}
+{% load static %}
+{% block content %}
+<div class="card-body">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-7">
+        <div class="card card-warning">
+          <div class="card-header">
+            <h3 class="card-title">Take Attendance</h3>
+          </div>
+          <form action="" method="POST">
+            <p>{%csrf_token%}</p>
+
+            <p>{{form.staff.label}} : {{form.staff}}</p>
+            <p>{{form.type.label}} : {{form.type}}</p>
+            <p>{{form.attendance_date.label}} : {{form.attendance_date}}</p>
+            <p>{{form.request_from.label}} : {{form.request_from}} {{form.request_to.label}} : {{ form.request_to}}</p>
+            <p>{{form.remarks.label}} : {{form.remarks}}</p>
+            <p><input type="submit" class="btn btn-primary" name="Submit"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
