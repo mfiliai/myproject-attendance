@@ -1,24 +1,29 @@
-from django.forms import ModelForm
-from django.forms import forms
-from .models import Stafflist
-from .models import AttendanceT20
-from .models import TreasuryPurposes
+from django import forms
+
+from .models import Staff, StaffDetail, Attendance
 from django.contrib.admin.widgets import AdminDateWidget
 
 
-class StaffForm(ModelForm):
+class StaffForm(forms.ModelForm):
     class Meta:
-        model = Stafflist
+        model = Staff
         fields = "__all__"
 
 
-class AttendanceForm(ModelForm):
+class StaffDetailForm(forms.ModelForm):
     class Meta:
-        model = AttendanceT20
+        model = StaffDetail
         fields = "__all__"
 
 
-class DeductionForm(ModelForm):
+class AttendanceForm(forms.ModelForm):
     class Meta:
-        model = TreasuryPurposes
+        model = Attendance
         fields = "__all__"
+        widgets = {"attendance_date": forms.DateInput(format="%YYYY-%MM-%DD")}
+
+
+# class DeductionForm(ModelForm):
+#     class Meta:
+#         model = TreasuryPurposes
+#         fields = "__all__"
